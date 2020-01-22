@@ -189,7 +189,7 @@ Perform this same step in the database_setup.py and the dbdata.py files.
 
 ## Appendix:
 
-1. Public IP address: [18.191.85.141](18.191.85.141)
+1. Public IP address: 18.191.85.141
 
 2. GitHub Item Catalog Repository: https://github.com/mike3983/Item-Catalog
 
