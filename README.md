@@ -163,7 +163,7 @@ You should see the username changed again in command line, and type `$ psql` to 
 
 4. Set a password for user catalog
 
-`postgres=# ALTER ROLE catalog WITH PASSWORD 'password';`
+`postgres=# ALTER ROLE mikeg WITH PASSWORD '';`
 
 5. Give user "mikeg" permission to "soc" application database
 
