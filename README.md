@@ -202,3 +202,4 @@ Perform this same step in the database_setup.py and the dbdata.py files.
 2. https://github.com/anumsh/Linux-Server-Configuration
 3. https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 4. https://github.com/juvers/Linux-Configuration/blob/master/README.md
+5. https://pythonprogramming.net/basic-flask-website-tutorial/?completed=/practical-flask-introduction/
