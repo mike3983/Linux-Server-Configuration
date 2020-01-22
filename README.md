@@ -7,10 +7,11 @@ Final Project: Linux Server Configuration
 
 2. After you log in, click 'Create Instance';
 
-3. Select Platform (linux) and  blueprint (ubuntu):
+3. Select Platform (linux):
 ![create instance](https://github.com/mike3983/Linux-Server-Configuration/blob/master/pics/35C4D8EE-512D-4B9B-9474-1C81AC87441F.jpeg)
 
-4. Scroll down to name your instance and click 'Create'
+4. Select Blueprint (Ubuntu). Scroll down to name your instance. Click 'Create':
+![select blueprint](https://github.com/mike3983/Linux-Server-Configuration/blob/master/pics/5ED3AAE2-FD3A-4CCE-BA1E-77F00D4267D6.jpeg)
 
 5. The instance needs about 2 mins to set up. After it is set up, you will see 'running' in the left corner of the status card. Take note of the public IP.
 
