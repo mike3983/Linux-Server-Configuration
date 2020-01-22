@@ -7,7 +7,8 @@ Final Project: Linux Server Configuration
 
 2. After you log in, click 'Create Instance';
 
-3. Select Platform (linux) and  blueprint (ubuntu)
+3. Select Platform (linux) and  blueprint (ubuntu):
+
 
 4. Scroll down to name your instance and click 'Create'
 
