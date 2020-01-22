@@ -36,9 +36,9 @@ N.B. From here take note of the use of first and second instances of terminals. 
 6. Create a new file in the sudoers directory: `$ sudo nano /etc/sudoers.d/grader`. And give grader the super permisssion `grader ALL=(ALL:ALL) ALL`. Save and exit
 
 7. Run the following commands to update all packages and install finger package:
--`$ sudo apt-get update`
--`$ sudo apt-get upgrade`
--`$ sudo apt-get install finger`
+- `$ sudo apt-get update`
+- `$ sudo apt-get upgrade`
+- `$ sudo apt-get install finger`
 
 8. Open a new(now the second) Terminal window (Command+N) and input `$ ssh-keygen -f ~/.ssh/udacity_key.rsa`
 
