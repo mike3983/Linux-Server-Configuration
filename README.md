@@ -193,6 +193,8 @@ Perform this same step in the database_setup.py and the dbdata.py files.
 
 2. GitHub Item Catalog Repository: https://github.com/mike3983/Item-Catalog
 
+3. NOTE: During the grading process, requested to perform `$ sudo ufw deny 22` to disable port 22
+
 
 ## Reference
 
