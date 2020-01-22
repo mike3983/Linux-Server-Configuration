@@ -36,66 +36,66 @@ N.B. From here take note of the use of first and second instances of terminals. 
 6. Create a new file in the sudoers directory: `$ sudo nano /etc/sudoers.d/grader`. And give grader the super permisssion `grader ALL=(ALL:ALL) ALL`. Save and exit
 
 7. Run the following commands to update all packages and install finger package:
-- `$ sudo apt-get update`
-- `$ sudo apt-get upgrade`
-- `$ sudo apt-get install finger`
+`$ sudo apt-get update`
+`$ sudo apt-get upgrade`
+`$ sudo apt-get install finger`
 
 8. Open a new(now the second) Terminal window (Command+N) and input `$ ssh-keygen -f ~/.ssh/udacity_key.rsa`
 
-10. Stay on the same(i.e the second) Terminal window, input `$ cat ~/.ssh/udacity_key.rsa.pub` to read the public key. Copy the public key.
+9. Stay on the same(i.e the second) Terminal window, input `$ cat ~/.ssh/udacity_key.rsa.pub` to read the public key. Copy the public key.
 
-11. Return to the first terminal window where you are logged into Amazon Lightsail as the root user, move to grader's folder by `$ cd /home/grader`
+10. Return to the first terminal window where you are logged into Amazon Lightsail as the root user, move to grader's folder by `$ cd /home/grader`
 
-12. Create a .ssh directory (in same first terminal): `$ mkdir .ssh`
+11. Create a .ssh directory (in same first terminal): `$ mkdir .ssh`
 
-13. Create a file to store the public key(still in first terminal...use of first terminal will end in #18): `$ touch .ssh/authorized_keys`
+12. Create a file to store the public key(still in first terminal...use of first terminal will end in #18): `$ touch .ssh/authorized_keys`
 
-14. Edit the authorized_keys file `$ nano .ssh/authorized_keys`
+13. Edit the authorized_keys file `$ nano .ssh/authorized_keys`
 
-15. Change the permission: `$ sudo chmod 700 /home/grader/.ssh` and `$ sudo chmod 644 /home/grader/.ssh/authorized_keys`
+14. Change the permission: `$ sudo chmod 700 /home/grader/.ssh` and `$ sudo chmod 644 /home/grader/.ssh/authorized_keys`
 
-16. Change the owner from root to grader: `$ sudo chown -R grader:grader /home/grader/.ssh`
+15. Change the owner from root to grader: `$ sudo chown -R grader:grader /home/grader/.ssh`
 
-17. Restart the ssh service: `$ sudo service ssh restart`
+16. Restart the ssh service: `$ sudo service ssh restart`
 
-18. Type `exit` to disconnect from Amazon Lightsail server
+17. Type `exit` to disconnect from Amazon Lightsail server
 
-19. Log into the server as grader(that is log in via the second terminal window): `$ ssh -i ~/.ssh/udacity_key.rsa grader@18.191.85.141`
+18. Log into the server as grader(that is log in via the second terminal window): `$ ssh -i ~/.ssh/udacity_key.rsa grader@18.191.85.141`
 
-20. Enforce the key-based authentication: `$ sudo nano /etc/ssh/sshd_config`. Find the *PasswordAuthentication* line and change text to `no`. After this, restart ssh again: `$ sudo service ssh restart`
+19. Enforce the key-based authentication: `$ sudo nano /etc/ssh/sshd_config`. Find the *PasswordAuthentication* line and change text to `no`. After this, restart ssh again: `$ sudo service ssh restart`
 
-21. Change the ssh port from 22 to 2200: `$ sudo nano /etc/ssh/ssdh_config` Find the *Port* line and change `22` to `2200`. Restart ssh: `$ sudo service ssh restart`
+20. Change the ssh port from 22 to 2200: `$ sudo nano /etc/ssh/ssdh_config` Find the *Port* line and change `22` to `2200`. Restart ssh: `$ sudo service ssh restart`
 
-22. Disconnect the server by `^c` and then log back through port 2200: `$ ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@13.58.109.116` now loggin in via port 2200
+21. Disconnect the server by `^c` and then log back through port 2200: `$ ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@13.58.109.116` now loggin in via port 2200
 
-23. Disable ssh login for *root* user to prevent attackers from making a fondering attept with root: `$ sudo nano /etc/ssh/sshd_config`. Find the *PermitRootLogin* line and edit to `no`. Restart ssh `$ sudo service ssh restart`
+22. Disable ssh login for *root* user to prevent attackers from making a fondering attept with root: `$ sudo nano /etc/ssh/sshd_config`. Find the *PermitRootLogin* line and edit to `no`. Restart ssh `$ sudo service ssh restart`
 
-24. Configure the Firewall:
-- `$ sudo ufw status`
-- `$ sudo ufw allow 2200/tcp`
-- `$ sudo ufw allow 80/tcp`
-- `$ sudo ufw allow 123/udp`
-- `$ sudo ufw enable`
+23. Configure the Firewall:
+`$ sudo ufw status`
+`$ sudo ufw allow 2200/tcp`
+`$ sudo ufw allow 80/tcp`
+`$ sudo ufw allow 123/udp`
+`$ sudo ufw enable`
 
 ## Deploy Catalog Application
 
 Ensure you are logged in as grader. Should at anypoint a ubuntu password is requested simply ^d and use `sudo` to re-execute that command.
 
 1. Install required packages
-- `$ sudo apt-get install apache2`
-- `$ sudo apt-get install libapache2-mod-wsgi-py3 libapache2-mod-wsgi python-dev`
-- `$ sudo apt-get install git`
-- `$ sudo apt-get install python-pip`
+`$ sudo apt-get install apache2`
+`$ sudo apt-get install libapache2-mod-wsgi-py3 libapache2-mod-wsgi python-dev`
+`$ sudo apt-get install git`
+`$ sudo apt-get install python-pip`
 
 2. Enable mod_wsgi (mod_wsgi package implements an Apache module which can host any Python web application which supports the Python WSGI specification.)`$ sudo a2enmod wsgi` and start the web server by `$ sudo service apache2 start` or `$ sudo service apache2 restart`
 
 3. Enter your public IP address in your browser now and the apache2 default page should be loaded.
 
 4. Create catalog folder to keep app and make grader owner and group of the folder
-- `$ cd /var/www`
-- `$ sudo mkdir WebApp`
-- `$ sudo chown -R grader:grader WebApp`
-- `$ cd WebApp`
+`$ cd /var/www`
+`$ sudo mkdir WebApp`
+`$ sudo chown -R grader:grader WebApp`
+`$ cd WebApp`
 
 5. Clone the project from Github: `$ git clone [your link] WebApp` (so folder path to app will become `var/www/WebApp/WebApp`). All required files must be in the WebApp folder.
 
@@ -115,13 +115,13 @@ application.secret_key = 'super_secret_key'
 
 7. In /var/www/WebApp/WebApp Rename the `application.py` to `__init__.py` as follows `mv application.py __init__.py`
 
-9. Install the Flask and other packages needed for this application
-- `$ sudo pip install Flask`
-- `$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlaclemy_utils requests`
+8. Install the Flask and other packages needed for this application
+`$ sudo pip install Flask`
+`$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlaclemy_utils requests`
 
-11. Configure and enable the virtual host:
-- `$ sudo nano /etc/apache2/sites-available/catalog.conf`
-- Paste the following code and save
+9. Configure and enable the virtual host:
+`$ sudo nano /etc/apache2/sites-available/catalog.conf`
+Paste the following code and save
 ```
 <VirtualHost *:80>
                 ServerName 18.191.85.141
@@ -146,32 +146,33 @@ application.secret_key = 'super_secret_key'
 You can find your host name in this link: http://www.hcidata.info/host2ip.cgi
 
 ##Setup Database
-1. Now we need to set up the database
-- `$ sudo apt-get install libpq-dev python-dev`
-- `$ sudo apt-get install postgresql postgresql-contrib`
-- `$ sudo -u postgres -i`
 
-2. Login as user "postgres" -`$ sudo su - postgres`
+1. Now we need to set up the database
+`$ sudo apt-get install libpq-dev python-dev`
+`$ sudo apt-get install postgresql postgresql-contrib`
+`$ sudo -u postgres -i`
+
+2. Login as user "postgres" `$ sudo su - postgres`
 You should see the username changed again in command line, and type `$ psql` to get into postgres command line
 
 3. Create a new database named 'soc' and create a new user named 'mikeg' in postgreSQL shell
 
--`postgres=# CREATE DATABASE soc;`
--`postgres=# CREATE USER mikeg;`
+`postgres=# CREATE DATABASE soc;`
+`postgres=# CREATE USER mikeg;`
 
 4. Set a password for user catalog
 
--`postgres=# ALTER ROLE catalog WITH PASSWORD 'password';`
+`postgres=# ALTER ROLE catalog WITH PASSWORD 'password';`
 
 5. Give user "mikeg" permission to "soc" application database
 
--`postgres=# GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;`
+`postgres=# GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;`
 
 6. Quit postgreSQL -`postgres=# \q`
 
 Exit from user "postgres"
 
--`exit`
+`exit`
 
 ##Adjust Python Files and Launch App
 
