@@ -97,7 +97,7 @@ Ensure you are logged in as grader. Should at anypoint a ubuntu password is requ
 - `$ sudo chown -R grader:grader WebApp`
 - `$ cd WebApp`
 
-5. Clone the project from Github: `$ git clone [your link] WebApp` (so folder path to app will become `var/www/catalog/catalog`)
+5. Clone the project from Github: `$ git clone [your link] WebApp` (so folder path to app will become `var/www/WebApp/WebApp`). All required files must be in the WebApp folder.
 
 (The Web Server Gateway Interface (WSGI) is a specification for simple and universal interface between web servers and web applications or frameworks for the Python programming language.)
 
@@ -188,7 +188,12 @@ Perform this in the database_setup.py and the dbdata.py(i.e. in 3 places)
 
 1. Public IP address: 18.191.85.141
 
-2. GitHub Item Catalog Repository: 
+2. GitHub Item Catalog Repository: https://github.com/mike3983/Item-Catalog
 
 
 ## Reference
+
+1. How to Deploy a Flask App to a Linux Server - https://www.youtube.com/watch?v=YFBRVJPhDGY
+2. https://github.com/anumsh/Linux-Server-Configuration
+3. https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+4. https://github.com/juvers/Linux-Configuration/blob/master/README.md
