@@ -36,9 +36,9 @@ N.B. From here take note of the use of first and second instances of terminals. 
 6. Create a new file in the sudoers directory: `$ sudo nano /etc/sudoers.d/grader`. And give grader the super permisssion `grader ALL=(ALL:ALL) ALL`. Save and exit
 
 7. Run the following commands to update all packages and install finger package:
-`$ sudo apt-get update`
-`$ sudo apt-get upgrade`
-`$ sudo apt-get install finger`
+-`$ sudo apt-get update`
+-`$ sudo apt-get upgrade`
+-`$ sudo apt-get install finger`
 
 8. Open a new(now the second) Terminal window (Command+N) and input `$ ssh-keygen -f ~/.ssh/udacity_key.rsa`
 
@@ -145,7 +145,7 @@ Paste the following code and save
 ```
 You can find your host name in this link: http://www.hcidata.info/host2ip.cgi
 
-##Setup Database
+## Setup Database
 
 1. Now we need to set up the database
 `$ sudo apt-get install libpq-dev python-dev`
@@ -174,7 +174,7 @@ Exit from user "postgres"
 
 `exit`
 
-##Adjust Python Files and Launch App
+## Adjust Python Files and Launch App
 
 1. Use `sudo nano` command to change all engine to `engine = create_engine('postgresql://mikeg:[your password]@localhost/soc)` e.g engine = create_engine('engine = create_engine('postgresql://mikeg:[your password]@localhost/soc')
 Base.metadata.bind = engine.
