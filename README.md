@@ -23,9 +23,7 @@ Final Project: Linux Server Configuration
 
 1. Save the downloaded `.pem` public key file into .ssh folder which is based in the home directory of your personal computer
 
-2. Secure public key while also making it accessible `$ chmod 600 ~/.ssh/MyAWSKey.pem`
-
-N.B. From here take note of the use of first and second instances of terminals. The first terminal will be the server which will be same as a direct operation on the AWS terminal while the second terminal will be used to create the grader's account
+2. Secure public key while also making it accessible `$ chmod 600 ~/.ssh/MyAWSKey.pem`  ** From here, take note of the use of first and second instances of terminals. The first terminal will connect to the AWS server; the second terminal will be on the personal computer and used to create the grader's account
 
 3. Open the first terminal and use this key to log into our Amazon Lightsail Server: `$ ssh -i ~/.ssh/MyAWSKey.pem ubuntu@18.191.85.141`
 
