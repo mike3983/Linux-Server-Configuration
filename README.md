@@ -71,31 +71,31 @@ N.B. From here take note of the use of first and second instances of terminals. 
 22. Disable ssh login for *root* user to prevent attackers from making a fondering attept with root: `$ sudo nano /etc/ssh/sshd_config`. Find the *PermitRootLogin* line and edit to `no`. Restart ssh `$ sudo service ssh restart`
 
 23. Configure the Firewall:
-`$ sudo ufw status`
-`$ sudo ufw allow 2200/tcp`
-`$ sudo ufw allow 80/tcp`
-`$ sudo ufw allow 123/udp`
-`$ sudo ufw enable`
+- `$ sudo ufw status`
+- `$ sudo ufw allow 2200/tcp`
+- `$ sudo ufw allow 80/tcp`
+- `$ sudo ufw allow 123/udp`
+- `$ sudo ufw enable`
 
 ## Deploy Catalog Application
 
 Ensure you are logged in as grader. Should at anypoint a ubuntu password is requested simply ^d and use `sudo` to re-execute that command.
 
 1. Install required packages
-`$ sudo apt-get install apache2`
-`$ sudo apt-get install libapache2-mod-wsgi-py3 libapache2-mod-wsgi python-dev`
-`$ sudo apt-get install git`
-`$ sudo apt-get install python-pip`
+- `$ sudo apt-get install apache2`
+- `$ sudo apt-get install libapache2-mod-wsgi-py3 libapache2-mod-wsgi python-dev`
+- `$ sudo apt-get install git`
+- `$ sudo apt-get install python-pip`
 
 2. Enable mod_wsgi (mod_wsgi package implements an Apache module which can host any Python web application which supports the Python WSGI specification.)`$ sudo a2enmod wsgi` and start the web server by `$ sudo service apache2 start` or `$ sudo service apache2 restart`
 
 3. Enter your public IP address in your browser now and the apache2 default page should be loaded.
 
 4. Create catalog folder to keep app and make grader owner and group of the folder
-`$ cd /var/www`
-`$ sudo mkdir WebApp`
-`$ sudo chown -R grader:grader WebApp`
-`$ cd WebApp`
+- `$ cd /var/www`
+- `$ sudo mkdir WebApp`
+- `$ sudo chown -R grader:grader WebApp`
+- `$ cd WebApp`
 
 5. Clone the project from Github: `$ git clone [your link] WebApp` (so folder path to app will become `var/www/WebApp/WebApp`). All required files must be in the WebApp folder.
 
@@ -116,8 +116,8 @@ application.secret_key = 'super_secret_key'
 7. In /var/www/WebApp/WebApp Rename the `application.py` to `__init__.py` as follows `mv application.py __init__.py`
 
 8. Install the Flask and other packages needed for this application
-`$ sudo pip install Flask`
-`$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlaclemy_utils requests`
+- `$ sudo pip install Flask`
+- `$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlaclemy_utils requests`
 
 9. Configure and enable the virtual host:
 `$ sudo nano /etc/apache2/sites-available/catalog.conf`
@@ -148,17 +148,17 @@ You can find your host name in this link: http://www.hcidata.info/host2ip.cgi
 ## Setup Database
 
 1. Now we need to set up the database
-`$ sudo apt-get install libpq-dev python-dev`
-`$ sudo apt-get install postgresql postgresql-contrib`
-`$ sudo -u postgres -i`
+- `$ sudo apt-get install libpq-dev python-dev`
+- `$ sudo apt-get install postgresql postgresql-contrib`
+- `$ sudo -u postgres -i`
 
 2. Login as user "postgres" `$ sudo su - postgres`
 You should see the username changed again in command line, and type `$ psql` to get into postgres command line
 
 3. Create a new database named 'soc' and create a new user named 'mikeg' in postgreSQL shell
 
-`postgres=# CREATE DATABASE soc;`
-`postgres=# CREATE USER mikeg;`
+- `postgres=# CREATE DATABASE soc;`
+- `postgres=# CREATE USER mikeg;`
 
 4. Set a password for user catalog
 
