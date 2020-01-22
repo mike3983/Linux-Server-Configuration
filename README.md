@@ -18,6 +18,7 @@ Final Project: Linux Server Configuration
 6. Click the status card and navigate to account
 
 7. Download your private key which is a .pem file.
+![download pem key](https://github.com/mike3983/Linux-Server-Configuration/blob/master/pics/FB9884C5-F333-4FB1-B23A-C92AF85C0890.jpeg)
 
 8. Click the 'Networking' tab and find the 'Add another' at the bottom. Add port 123 (udp) and 2200(tcp).
 
