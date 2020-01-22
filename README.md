@@ -101,10 +101,9 @@ Ensure you are logged in as grader. Should at anypoint a ubuntu password is requ
 - `$ cd WebApp`
 
 5. Clone the project from Github: `$ git clone [your link] WebApp` (so folder path to app will become `var/www/WebApp/WebApp`). All required files must be in the WebApp folder.
+![clone github](https://github.com/mike3983/Linux-Server-Configuration/blob/master/pics/86EFC227-2B80-43BE-A8DC-F567A658645B_4_5005_c.jpeg)
 
-(The Web Server Gateway Interface (WSGI) is a specification for simple and universal interface between web servers and web applications or frameworks for the Python programming language.)
-
-6. Create a .wsgi file in `/var/www/WebApp/`: `$sudo nano webapp.wsgi` and add the following into this file
+6. Create a .wsgi file in `/var/www/WebApp/`: `$sudo nano webapp.wsgi` and add the following code into this file:
 ```
 #!/usr/bin/python
 import sys
@@ -122,9 +121,8 @@ application.secret_key = 'super_secret_key'
 - `$ sudo pip install Flask`
 - `$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlaclemy_utils requests`
 
-9. Configure and enable the virtual host:
-`$ sudo nano /etc/apache2/sites-available/catalog.conf`
-Paste the following code and save
+9. Configure and enable the virtual host: `$ sudo nano /etc/apache2/sites-available/catalog.conf`
+Paste the following code and save:
 ```
 <VirtualHost *:80>
                 ServerName 18.191.85.141
@@ -180,12 +178,13 @@ Exit from user "postgres"
 ## Adjust Python Files and Launch App
 
 1. Use `sudo nano` command to change all engine to `engine = create_engine('postgresql://mikeg:[your password]@localhost/soc)` e.g engine = create_engine('engine = create_engine('postgresql://mikeg:[your password]@localhost/soc')
-Base.metadata.bind = engine.
-Perform this in the database_setup.py and the dbdata.py(i.e. in 3 places)
+Base.metadata.bind = engine. 
 
-2. Initiate the database if you have a script to do so: `python database_setup.py `
+Perform this same step in the database_setup.py and the dbdata.py files.
 
-3. Restart Apache server `$ sudo service apache2 restart` and enter your public IP address or host name into the browser. Hooray! Your application should be online now!
+2. Initiate the database: `$ python database_setup.py` Populate the database by running: `$ python dbdata.py`
+
+3. Restart Apache server `$ sudo service apache2 restart` and enter your public IP address or host name into the browser. The web application should be online now!
 
 
 ## Appendix:
