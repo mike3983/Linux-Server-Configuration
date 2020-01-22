@@ -89,9 +89,10 @@ Ensure you are logged in as grader. Should at anypoint a ubuntu password is requ
 - `$ sudo apt-get install git`
 - `$ sudo apt-get install python-pip`
 
-2. Enable mod_wsgi (mod_wsgi package implements an Apache module which can host any Python web application which supports the Python WSGI specification.)`$ sudo a2enmod wsgi` and start the web server by `$ sudo service apache2 start` or `$ sudo service apache2 restart`
+2. Enable mod_wsgi `$ sudo a2enmod wsgi` and start the web server by `$ sudo service apache2 start` or `$ sudo service apache2 restart`
 
-3. Enter your public IP address in your browser now and the apache2 default page should be loaded.
+3. Enter your public IP address in your browser now and if apache2 installed correctly you should this page in your browser:
+![apache page](https://github.com/mike3983/Linux-Server-Configuration/blob/master/pics/A51C4146-56E4-4003-9B7D-420E3F75CD9D.jpeg)
 
 4. Create catalog folder to keep app and make grader owner and group of the folder
 - `$ cd /var/www`
